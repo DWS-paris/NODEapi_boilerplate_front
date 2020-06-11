@@ -14,18 +14,32 @@
         </header>
 
         <main>
-            <form action="#" method="POST" id="formRegister">
-                <label for="name">Nom</label>
-                <input type="text" name="name" id="name" minlength="2" required value="Julien Noyer">
+            <section>
+                <form action="#" method="POST" id="formRegister">
+                    <label for="name">Nom</label>
+                    <input type="text" name="name" id="name" minlength="2" required value="Julien Noyer">
+    
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" minlength="5" required value="juju@juju.com">
+    
+                    <label for="password">Mot passe</label>
+                    <input type="password" name="password" id="password" minlength="5" required value="111111">
+    
+                    <button type="submit">Inscription</button>
+                </form>
+            </section>
 
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" minlength="5" required value="juju@juju.com">
-
-                <label for="password">Mot passe</label>
-                <input type="password" name="password" id="password" minlength="5" required value="111111">
-
-                <button type="submit">Inscription</button>
-            </form>
+            <section>
+                <form action="#" method="POST" id="formLogin">
+                    <label for="emailLogin">Email</label>
+                    <input type="email" name="emailLogin" id="emailLogin" minlength="5" required value="juju@juju.com">
+    
+                    <label for="passwordLogin">Mot passe</label>
+                    <input type="password" name="passwordLogin" id="passwordLogin" minlength="5" required value="111111">
+    
+                    <button type="submit">Connexion</button>
+                </form>
+            </section>
         </main>
 
         <footer>
