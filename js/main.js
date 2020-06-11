@@ -23,7 +23,7 @@ const login = (formTag, email, password) => {
         event.preventDefault();
 
         new FETCHrequest(
-            'http://localhost:6985/api/auth/register', 
+            'http://localhost:6985/api/auth/login', 
             'POST', 
             { email, password }
         )
@@ -40,25 +40,19 @@ const login = (formTag, email, password) => {
 }
 
 const checkUser = () => {
-    if( localStorage.getItem('email') && localStorage.getItem('password') ){
-        new FETCHrequest(
-            'http://localhost:6985/api/auth/register', 
-            'POST', 
-            { email: localStorage.getItem('email'), password: localStorage.getItem('password') }
-        )
-        .sendRequest()
-        .then( apiResponse => {
-            console.log(apiResponse)
-            localStorage.setItem('email', email)
-            localStorage.setItem('password', password)
-        })
-        .catch( apiResponse => {
-            console.log(apiResponse)
-        })
-    }
-    else{
-        console.log('No localStorage')
-    };
+    new FETCHrequest(
+        'http://localhost:6985/api/auth/me', 
+        'GET'
+    )
+    .sendRequest()
+    .then( apiResponse => {
+        console.log(apiResponse)
+        document.querySelector('#formRegister').classList.add('hide');
+        document.querySelector('#formLogin').classList.add('hide');
+    })
+    .catch( apiResponse => {
+        console.log(apiResponse)
+    });
 };
 
 /* 
